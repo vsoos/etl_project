@@ -31,11 +31,10 @@ docker-compose up -d
 
 ## Running ETL script
 
-3. Running ETL Scripts
+3. Running etl.py
 ```sh
 cd etl_script
 python3 etl.py
-
 ```
 
 ## The Query APP
