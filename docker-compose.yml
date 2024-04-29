@@ -1,1 +1,35 @@
+version: '3.1'
 
+services:
+  oltp-database:
+    image: mysql:latest
+    environment:
+      MYSQL_DATABASE: 'oltp'
+      MYSQL_USER: 'user'
+      MYSQL_PASSWORD: 'password'
+      MYSQL_ROOT_PASSWORD: 'rootpassword'
+    ports:
+      - "3308:3306"
+    volumes:
+      - ./oltp.sql:/docker-entrypoint-initdb.d/oltp.sql
+    networks:
+      - oltp-olap-network
+
+  olap-database:
+    image: mysql:latest
+    environment:
+      MYSQL_DATABASE: 'olap'
+      MYSQL_USER: 'user'
+      MYSQL_PASSWORD: 'password'
+      MYSQL_ROOT_PASSWORD: 'rootpassword'
+    ports:
+      - "3309:3306"
+    volumes:
+      - ./olap.sql:/docker-entrypoint-initdb.d/olap.sql
+    networks:
+      - oltp-olap-network
+
+networks:
+  oltp-olap-network:
+    driver: bridge
+    
