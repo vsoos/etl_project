@@ -3,7 +3,7 @@
 This project encompasses a Dockerized setup of MySQL databases for OLTP and OLAP, it includes a Python script for Extract - Transform - Load (ETL) pipeline processes, and finally an interractive query application that you can run in your terminal.
 
 ## Demo
-![Uploading Screen Recording 2024-04-29 at 12.17.00 (5).gif…]()
+![](https://github.com/vsoos/etl_project/blob/main/demo.gif)
 
 ## Prerequisites
 
