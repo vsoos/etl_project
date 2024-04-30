@@ -70,7 +70,7 @@ Selected month: January 2023
 - **ETL**: wrote Python scripts to extract data from OLTP, transform it, and load it into OLAP, guided by several tutorials and articles on ETL pipeline development [[3]](#3) [[4]](#4) [[5]](#5).
 
 ### 6. Query Tool Development
-- **Query Application**: developed a terminal tool for data querying and reporting from the OLAP database.
+- **Query Application**: developed a terminal tool for data querying and reporting from the OLAP database and used models.oy for abstraction, and to provide readability and ease of use
 - **User Interaction**: enhanced user experience by allowing dynamic input with default settings (2023 / January upon clicking e.g. Enter)
 
 ## References
