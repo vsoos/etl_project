@@ -1,13 +1,13 @@
 # Rental Transactions Analytics System (ETL pipeline)
 
-This project encompasses a Dockerized setup of MySQL databases for OLTP and OLAP, it includes a Python script for Extract - Transform - Load (ETL) pipeline processes, and finally an interractive query application that you can run in your terminal.
+This project encompasses a Dockerized setup of MySQL databases for OLTP and OLAP, it includes a Python script for Extract - Transform - Load (ETL) pipeline processes, and finally an interactive query application that you can run in your terminal.
 
 ## Demo
 ![](https://github.com/vsoos/etl_project/blob/main/demo.gif)
 
 ## Setup instructions
-To test it you have to have Docker and Docker compose installed on your computer.
-For running the Python scirps you will need the following libaries installed: 'pandas', 'SQLAlchemy', 'cryptography':
+To test it you have to have Docker and Docker Compose installed on your computer.
+For running the Python script you will need the following libraries installed: 'pandas', 'SQLAlchemy' and 'cryptography':
 
 ```sh
 pip install pandas
@@ -44,9 +44,9 @@ python3 query_app.py
 ```sh
 Welcome to my OLAP! Here you can look at Rental Transactions Analytics of Random Data.
 Please enter a year and a month to analyze:
-Year (ex. 2023): 2021
-Month (January-December / 1-12): 7
-Selected month: July 2021
+Year (ex. 2023): -- your_input --
+Month (January-December / 1-12): -- your_input --
+Selected month: January 2023
 ```
 
 ## Development process
@@ -94,7 +94,7 @@ During this project, I used GPT-3.5 and GPT-4 for debugging and getting prelimin
 - **Docker Configuration**: GPT models assisted in deciding the architecture of Docker containers
 - **Quick Error Analytics**: effectively reduced the debugging time for me
 
-**Disclaimer:** Given the limited resources and guidance available, did I decide to use it. By using AI, I could navigate through a steep learning curve and effectively create the final product that I am super proud of.
+**Disclaimer:** Given the limited resources available, I did decide to use it. By doing so, I could navigate through a steep learning curve and effectively create the final product which I am super proud of.
 
 ## Example output 28.30.2024 on a MacBook Air 2021
 ```sh
