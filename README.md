@@ -5,8 +5,7 @@ This project encompasses a Dockerized setup of MySQL databases for OLTP and OLAP
 ## Demo
 ![](https://github.com/vsoos/etl_project/blob/main/demo.gif)
 
-## Prerequisites
-
+## Setup instructions
 To test it you have to have Docker and Docker compose installed on your computer. For running the Python scirps you will need the following libaries installed: 'pandas', 'SQLAlchemy', 'cryptography'.
 
 ```sh
@@ -14,37 +13,33 @@ pip install pandas
 pip install SQLAlchemy
 pip install cryptography
 ```
-
-## Setup
-
-1. Clone repository 
+### 1. Clone repository 
 
 ```sh
-git clone TBD
+git clone https://github.com/vsoos/etl_project
 cd etl_project
 ```
-2. Run the Database (Docker)
+### 2. Run the Database (Docker)
 ```sh
 docker-compose up -d
 ```
 <img width="665" alt="Screenshot 2024-04-29 at 12 12 46" src="https://github.com/vsoos/etl_project/assets/107116615/c50566eb-64fb-4b65-ab39-98bf7da266b7">
 
-## Running ETL script
+### 3. Run ETL script (etl.py)
 
-3. Running etl.py
 ```sh
 cd etl_script
 python3 etl.py
 ```
 
-## The Query APP
-4. Queries with the terminal app
+### 4. Run the Terminal app (query_app.py)
+
 ```sh
 cd terminal
 python3 query_app.py
 ```
 
-5. Greeting output
+### 5. Try out the terminal app!
 ```sh
 Welcome to my OLAP! Here you can look at Rental Transactions Analytics of Random Data.
 Please enter a year and a month to analyze:
@@ -53,7 +48,55 @@ Month (January-December / 1-12): 7
 Selected month: July 2021
 ```
 
-### Example output
+## Development process
+
+### 1. Research
+- **ETL**: ETL pipelines using PostgreSQL tutorials from freeCodeCamp on YouTube [[1]](#1).
+- **Faker**: Faker for generating synthetic data based on a NeuralNine tutorial on YouTube[[2]](#2).
+
+### 2. Database Schemas
+- **OLTP**: Created using DataGrip
+- **OLAP**: Developed for analytical processing / extending the OLTP design
+
+### 3. Data Generation and Preparation
+- **Data Generation**: with Faker I seeded the OLTP database with random data.
+- **Data Export**: MySQL dump to create portable versions of both OLTP and OLAP (mostly to avoid issues with foreign key dependencies)
+
+### 4. Docker
+- **Docker Setup**: run OLTP and OLAP databases in SQL containers on different ports (3308:3306 / 3309:3306)
+
+### 5. ETL Pipeline in Python with SQLAlchemy
+- **ETL**: wrote Python scripts to extract data from OLTP, transform it, and load it into OLAP, guided by several tutorials and articles on ETL pipeline development [[3]](#3) [[4]](#4) [[5]](#5).
+
+### 6. Query Tool Development
+- **Query Application**: developed a terminal tool for data querying and reporting from the OLAP database.
+- **User Interaction**: enhanced user experience by allowing dynamic input with default settings (2023 / January upon clicking e.g. Enter)
+
+## References
+<a id="1">[1]</a> freeCodeCamp.org. (2024, January 16). Data Engineering course for beginners [Video]. YouTube. https://www.youtube.com/watch?v=PHsC_t0j1dU
+
+<a id="2">[2]</a> NeuralNine. (2022, April 11). Generating Professional Sample Data with Faker in Python [Video]. YouTube. https://www.youtube.com/watch?v=7M2Q5wrqC7I
+
+<a id="3">[3]</a> SQLAlchemy Unified Tutorial — SQLAlchemy 2.0 Documentation. (n.d.). https://docs.sqlalchemy.org/en/20/tutorial/index.html#tutorial-overview
+
+<a id="4">[4]</a> Verma, S. (2023, July 31). Building an Efficient ETL Pipeline using Python: A Step-by-Step Guide | 1. Medium. https://medium.com/@siddharthverma.er.cse/building-an-efficient-etl-pipeline-using-python-a-step-by-step-guide-9ac9fc88d60
+
+<a id="5">[5]</a> Tope. (2023, September 13). Build an ETL Data Pipeline using Python - Data Engineer Things. Medium. https://blog.det.life/build-an-etl-data-pipeline-using-python-139c6875b046
+
+### Utilization of AI
+
+During this project, I used GPT-3.5 and GPT-4 for debugging and getting preliminary structures for the ETL scripts and Docker setup. 
+While I typically use AI models cautiously because it takes more time to debug than to do than write code from scratch, maybe I am searching for it wrong but there is barely any information on data engineering and only some with code.
+
+**Reasons for Utilizing GPT Models:**
+- **Schema Validation**: The AI's ability to assess the appropriateness of the OLAP schema based on the OLTP schema proved crucial, especially when inconsistencies could lead to significant setbacks.
+- **ETL**: ChatGPT was great help in suggesting basic structures for the ETL scripts
+- **Docker Configuration**: GPT models assisted in deciding the architecture of Docker containers
+- **Quick Error Analytics**: effectively reduced the debugging time for me
+
+**Disclaimer:** Given the limited resources and guidance available for, did I decide to utilise it. By using AI, I could navigate through a steep learning curve and effectively create the final product that I am super proud of.
+
+## Example output 28.30.2024 on a MacBook Air 2021
 ```sh
 vini@Vincenzinas-MacBook-Air terminal % python3 query_app.py
 
