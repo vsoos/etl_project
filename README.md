@@ -6,7 +6,8 @@ This project encompasses a Dockerized setup of MySQL databases for OLTP and OLAP
 ![](https://github.com/vsoos/etl_project/blob/main/demo.gif)
 
 ## Setup instructions
-To test it you have to have Docker and Docker compose installed on your computer. For running the Python scirps you will need the following libaries installed: 'pandas', 'SQLAlchemy', 'cryptography'.
+To test it you have to have Docker and Docker compose installed on your computer.
+For running the Python scirps you will need the following libaries installed: 'pandas', 'SQLAlchemy', 'cryptography':
 
 ```sh
 pip install pandas
@@ -86,15 +87,14 @@ Selected month: July 2021
 ### Utilization of AI
 
 During this project, I used GPT-3.5 and GPT-4 for debugging and getting preliminary structures for the ETL scripts and Docker setup. 
-While I typically use AI models cautiously because it takes more time to debug than to do than write code from scratch, maybe I am searching for it wrong but there is barely any information on data engineering and only some with code.
 
 **Reasons for Utilizing GPT Models:**
 - **Schema Validation**: The AI's ability to assess the appropriateness of the OLAP schema based on the OLTP schema proved crucial, especially when inconsistencies could lead to significant setbacks.
-- **ETL**: ChatGPT was great help in suggesting basic structures for the ETL scripts
+- **ETL**: ChatGPT was a great help in suggesting basic structures for the ETL scripts
 - **Docker Configuration**: GPT models assisted in deciding the architecture of Docker containers
 - **Quick Error Analytics**: effectively reduced the debugging time for me
 
-**Disclaimer:** Given the limited resources and guidance available for, did I decide to utilise it. By using AI, I could navigate through a steep learning curve and effectively create the final product that I am super proud of.
+**Disclaimer:** Given the limited resources and guidance available, did I decide to use it. By using AI, I could navigate through a steep learning curve and effectively create the final product that I am super proud of.
 
 ## Example output 28.30.2024 on a MacBook Air 2021
 ```sh
